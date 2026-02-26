@@ -1,0 +1,9 @@
+export type ITableLookOptions = {
+    readonly firstRow?: boolean;
+    readonly lastRow?: boolean;
+    readonly firstColumn?: boolean;
+    readonly lastColumn?: boolean;
+    readonly noHBand?: boolean;
+    readonly noVBand?: boolean;
+};
+export declare const createTableLook: ({ firstRow, lastRow, firstColumn, lastColumn, noHBand, noVBand }: ITableLookOptions) => XmlComponent;

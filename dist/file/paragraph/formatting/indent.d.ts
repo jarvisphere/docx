@@ -1,0 +1,10 @@
+import { PositiveUniversalMeasure, UniversalMeasure } from '../../../util/values';
+export type IIndentAttributesProperties = {
+    readonly start?: number | UniversalMeasure;
+    readonly end?: number | UniversalMeasure;
+    readonly left?: number | UniversalMeasure;
+    readonly right?: number | UniversalMeasure;
+    readonly hanging?: number | PositiveUniversalMeasure;
+    readonly firstLine?: number | PositiveUniversalMeasure;
+};
+export declare const createIndent: ({ start, end, left, right, hanging, firstLine }: IIndentAttributesProperties) => XmlComponent;

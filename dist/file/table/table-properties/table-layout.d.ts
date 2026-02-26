@@ -1,0 +1,5 @@
+export declare const TableLayoutType: {
+    readonly AUTOFIT: "autofit";
+    readonly FIXED: "fixed";
+};
+export declare const createTableLayout: (type: (typeof TableLayoutType)[keyof typeof TableLayoutType]) => XmlComponent;

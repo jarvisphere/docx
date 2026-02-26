@@ -1,0 +1,8 @@
+export declare const SectionType: {
+    readonly NEXT_PAGE: "nextPage";
+    readonly NEXT_COLUMN: "nextColumn";
+    readonly CONTINUOUS: "continuous";
+    readonly EVEN_PAGE: "evenPage";
+    readonly ODD_PAGE: "oddPage";
+};
+export declare const createSectionType: (value: (typeof SectionType)[keyof typeof SectionType]) => XmlComponent;

@@ -1,0 +1,18 @@
+import { TextWrappingType } from '../../../../text-wrap';
+export declare enum VerticalAnchor {
+    CENTER = "ctr",
+    TOP = "t",
+    BOTTOM = "b"
+}
+export type IBodyPropertiesOptions = {
+    readonly wrap?: (typeof TextWrappingType)[keyof typeof TextWrappingType];
+    readonly verticalAnchor?: VerticalAnchor;
+    readonly margins?: {
+        readonly top?: number;
+        readonly bottom?: number;
+        readonly left?: number;
+        readonly right?: number;
+    };
+    readonly noAutoFit?: boolean;
+};
+export declare const createBodyProperties: (options?: IBodyPropertiesOptions) => XmlComponent;

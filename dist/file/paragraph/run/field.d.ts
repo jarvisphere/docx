@@ -1,0 +1,3 @@
+export declare const createBegin: (dirty?: boolean) => XmlComponent;
+export declare const createSeparate: (dirty?: boolean) => XmlComponent;
+export declare const createEnd: (dirty?: boolean) => XmlComponent;

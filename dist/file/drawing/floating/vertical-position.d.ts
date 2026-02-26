@@ -1,0 +1,2 @@
+import { IVerticalPositionOptions } from './floating-position';
+export declare const createVerticalPosition: ({ relative, align, offset }: IVerticalPositionOptions) => XmlComponent;

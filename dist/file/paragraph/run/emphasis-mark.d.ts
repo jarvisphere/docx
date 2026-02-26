@@ -1,0 +1,5 @@
+export declare const EmphasisMarkType: {
+    readonly DOT: "dot";
+};
+export declare const createEmphasisMark: (emphasisMarkType?: (typeof EmphasisMarkType)[keyof typeof EmphasisMarkType]) => XmlComponent;
+export declare const createDotEmphasisMark: () => XmlComponent;
