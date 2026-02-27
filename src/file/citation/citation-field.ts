@@ -1,9 +1,9 @@
+import { Run, TextRun } from "../paragraph/run";
+import { createBegin, createEnd, createSeparate } from "../paragraph/run/field";
+import { TextAttributes } from "../paragraph/run/text-attributes";
+import { SpaceType } from "../shared/space-type";
 import { XmlComponent } from "../xml-components";
 import { EmptyElement, NumberValueElement, StringValueElement } from "../xml-components/simple-elements";
-import { Begin, End, Separate } from "../paragraph/run/field";
-import { Run, TextRun } from "../paragraph/run";
-import { SpaceType } from "../shared/space-type";
-import { TextAttributes } from "../paragraph/run/text-attributes";
 
 export interface ICitationFieldOptions {
     readonly tag: string;
@@ -41,9 +41,9 @@ class CitationSdtContent extends XmlComponent {
         const locatorSwitch = options.locator ? ` \\p ${options.locator}` : "";
         const instruction = ` CITATION ${options.tag}${multiSwitch}${locatorSwitch} \\l ${locale} `;
 
-        this.root.push(new Run({ children: [new Begin()] }));
+        this.root.push(new Run({ children: [createBegin()] }));
         this.root.push(new Run({ children: [new CitationInstrText(instruction)] }));
-        this.root.push(new Run({ children: [new Separate()] }));
+        this.root.push(new Run({ children: [createSeparate()] }));
         this.root.push(
             new TextRun({
                 text: options.displayText,
@@ -51,7 +51,7 @@ class CitationSdtContent extends XmlComponent {
                 superScript: options.superScript,
             }),
         );
-        this.root.push(new Run({ children: [new End()] }));
+        this.root.push(new Run({ children: [createEnd()] }));
     }
 }
 
