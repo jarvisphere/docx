@@ -14876,7 +14876,7 @@ var __async = (__this, __arguments, generator) => {
       var _a;
       super("w:sdtContent");
       const locale = (_a = options.locale) != null ? _a : 1033;
-      const multiSwitch = options.extraTags && options.extraTags.length > 0 ? " " + options.extraTags.map((t) => `\\m ${t}`).join(" ") : "";
+      const multiSwitch = options.extraTags && options.extraTags.length > 0 ? ` ${options.extraTags.map((t) => `\\m ${t}`).join(" ")}` : "";
       const locatorSwitch = options.locator ? ` \\p ${options.locator}` : "";
       const instruction = ` CITATION ${options.tag}${multiSwitch}${locatorSwitch} \\l ${locale} `;
       this.root.push(new Run({ children: [createBegin()] }));
