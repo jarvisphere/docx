@@ -5,7 +5,7 @@ import { SpaceType } from "../shared/space-type";
 import { XmlComponent } from "../xml-components";
 import { EmptyElement, NumberValueElement, StringValueElement } from "../xml-components/simple-elements";
 
-export interface ICitationFieldOptions {
+export type ICitationFieldOptions = {
     readonly tag: string;
     readonly displayText: string;
     readonly locator?: string;
@@ -38,7 +38,7 @@ class CitationSdtContent extends XmlComponent {
         const locale = options.locale ?? 1033;
         const multiSwitch =
             options.extraTags && options.extraTags.length > 0
-                ? " " + options.extraTags.map((t) => `\\m ${t}`).join(" ")
+                ? ` ${options.extraTags.map((t) => `\\m ${t}`).join(" ")}`
                 : "";
         const locatorSwitch = options.locator ? ` \\p ${options.locator}` : "";
         const instruction = ` CITATION ${options.tag}${multiSwitch}${locatorSwitch} \\l ${locale} `;
